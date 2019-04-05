@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+        <include
+            android:id="@+id/bar"
+            layout="@layout/item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_below="@+id/bar"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20dp">
+                <RelativeLayout
+                    android:id="@+id/rl_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/edtName"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_50dp"
+                        android:layout_marginLeft="@dimen/_15dp"
+                        android:layout_marginRight="@dimen/_15dp"
+                        android:background="@drawable/edittext_background"
+                        android:hint="@string/name"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:nextFocusDown="@+id/edtEmail"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:textSize="@dimen/_15sp" />
+
+                    <TextView
+                        android:id="@+id/txtNameError"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/edtName"
+                        android:layout_marginLeft="@dimen/_25dp"
+                        android:layout_marginTop="5dp"
+                        android:text="メールアドレス"
+                        android:textColor="@color/colorRed"
+                        android:textSize="@dimen/_12sp"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_mail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_name"
+                    android:layout_marginTop="@dimen/_10dp">
+
+                    <EditText
+                        android:id="@+id/edtEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_50dp"
+                        android:layout_marginLeft="@dimen/_15dp"
+                        android:layout_marginRight="@dimen/_15dp"
+                        android:background="@drawable/edittext_background"
+                        android:hint="@string/mail"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:nextFocusDown="@+id/edtPass"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:textSize="@dimen/_15sp" />
+
+                    <TextView
+                        android:id="@+id/txtEmailError"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/edtEmail"
+                        android:layout_marginLeft="@dimen/_25dp"
+                        android:layout_marginTop="5dp"
+                        android:text="メールアドレス"
+                        android:textColor="@color/colorRed"
+                        android:textSize="@dimen/_12sp"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_pass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_mail"
+                    android:layout_marginTop="@dimen/_10dp">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_pass_err"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/edtPass"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_50dp"
+                            android:layout_marginLeft="@dimen/_15dp"
+                            android:layout_marginRight="@dimen/_15dp"
+                            android:background="@drawable/edittext_background"
+                            android:hint="@string/pass_login"
+                            android:inputType="textPassword"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:textSize="@dimen/_15sp" />
+
+                        <TextView
+                            android:id="@+id/txtPassError"
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:layout_below="@+id/edtPass"
+                            android:layout_marginLeft="@dimen/_25dp"
+                            android:layout_marginTop="@dimen/_5dp"
+                            android:text="メールアドレス"
+                            android:textColor="@color/colorRed"
+                            android:textSize="@dimen/_12sp"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/rl_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_pass"
+                    android:layout_marginTop="@dimen/_10dp">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_phone_err"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/edtPhone"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_50dp"
+                            android:layout_marginLeft="@dimen/_15dp"
+                            android:layout_marginRight="@dimen/_15dp"
+                            android:background="@drawable/edittext_background"
+                            android:hint="@string/phone"
+                            android:inputType="textPassword"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:textSize="@dimen/_15sp" />
+
+                        <TextView
+                            android:id="@+id/txtPhoneError"
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:layout_below="@+id/edtPhone"
+                            android:layout_marginLeft="@dimen/_25dp"
+                            android:layout_marginTop="@dimen/_5dp"
+                            android:text="メールアドレス"
+                            android:textColor="@color/colorRed"
+                            android:textSize="@dimen/_12sp"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/rl_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_phone"
+                    android:layout_marginTop="@dimen/_10dp">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_address_err"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/edtAddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_50dp"
+                            android:layout_marginLeft="@dimen/_15dp"
+                            android:layout_marginRight="@dimen/_15dp"
+                            android:background="@drawable/edittext_background"
+                            android:hint="@string/address"
+                            android:inputType="textPassword"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:textSize="@dimen/_15sp" />
+
+                        <TextView
+                            android:id="@+id/txtAddressError"
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:layout_below="@+id/edtAddress"
+                            android:layout_marginLeft="@dimen/_25dp"
+                            android:layout_marginTop="@dimen/_5dp"
+                            android:text="メールアドレス"
+                            android:textColor="@color/colorRed"
+                            android:textSize="@dimen/_12sp"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/btn_register"
+                    style="@style/TextBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50dp"
+                    android:layout_below="@+id/rl_address"
+                    android:layout_marginLeft="@dimen/_15dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="@dimen/_15dp"
+                    android:text="申込"
+                    android:layout_marginBottom="@dimen/_20dp"/>
+
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+
+    </RelativeLayout>
+
+</layout>

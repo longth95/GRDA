@@ -1,0 +1,34 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/TitleGrayWhite</item>
+        <item name="colorAccent">@color/colorBlue</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+
+    </style>
+    <style name="TextBtn">
+        <item name="android:textSize">@dimen/_17sp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/_50dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/bg_btn_register</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextTitle">
+        <item name="android:textSize">@dimen/_15sp</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">@dimen/_5dp</item>
+        <item name="android:textStyle">bold</item>
+
+    </style>
+    <style name="TextTitleNotBold" parent="TextTitle">
+        <item name="android:textStyle">normal</item>
+    </style>
+</resources>

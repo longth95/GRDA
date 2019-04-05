@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">DATT</string>
+    <string name="ok">OK</string>
+    <string name="no_internet_access_title">ネットワークに接続されていません</string>
+    <string name="mail">メールアドレス</string>
+    <string name="pass_login">パスワード</string>
+    <string name="name">名前</string>
+    <string name="phone">電話番号</string>
+    <string name="address">場所</string>
+    <string name="err_empy">入力してください</string>
+    <string name="iie">いいえ</string>
+    <string name="hai">はい</string>
+    <string name="title_register">会員登録</string>
+    <string name="home">ホーム</string>
+    <string name="stand">スタンド</string>
+    <string name="notification">通知</string>
+    <string name="profile">プロフィール</string>
+
+</resources>
