@@ -15,5 +15,7 @@
     <string name="stand">スタンド</string>
     <string name="notification">通知</string>
     <string name="profile">プロフィール</string>
+    <string name="mail_err">メールアドレスは既に登録されています。</string>
+    <string name="login_err">ログインできませんでした。\nメールアドレスとパスワードをご確認ください。</string>
 
 </resources>

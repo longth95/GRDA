@@ -1,8 +1,11 @@
 package com.example.kaopiz_admin.myapplication.view.register_screen;
 
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -12,11 +15,14 @@ import android.view.View;
 import com.example.kaopiz_admin.myapplication.R;
 import com.example.kaopiz_admin.myapplication.databinding.ActivityRegisterBinding;
 import com.example.kaopiz_admin.myapplication.dialog.DialogConfirmNoTitle;
+import com.example.kaopiz_admin.myapplication.model.Resource;
+import com.example.kaopiz_admin.myapplication.model.State;
+import com.example.kaopiz_admin.myapplication.model.User;
 import com.example.kaopiz_admin.myapplication.view.BaseActivity;
 import com.example.kaopiz_admin.myapplication.view.login_screen.LoginActivity;
 
 public class RegisterActivity extends BaseActivity<ActivityRegisterBinding> implements DialogConfirmNoTitle.CallBackDialogActivityCom {
-
+    RegisterViewModel regsterViewModel;
     DialogConfirmNoTitle dialogConfirm;
     @Override
     public int getLayoutId() {
@@ -26,6 +32,8 @@ public class RegisterActivity extends BaseActivity<ActivityRegisterBinding> impl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        regsterViewModel = ViewModelProviders.of(this, viewModelFactory).get(RegisterViewModel.class);
+
         viewBinding.bar.title.setText(R.string.title_register);
         goneTxtErr();
         viewBinding.edtEmail.addTextChangedListener(new TextWatcher() {
@@ -167,6 +175,19 @@ public class RegisterActivity extends BaseActivity<ActivityRegisterBinding> impl
             }
 
         });
+        regsterViewModel.registerStateLiveData().observe(this, userResource -> {
+            if(userResource.state== State.SUCCESS){
+                if(userResource.t){
+                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                    finish();
+                }else {
+                    viewBinding.txtEmailError.setVisibility(View.VISIBLE);
+                    viewBinding.txtEmailError.setText(R.string.mail_err);
+                    viewBinding.edtEmail.setBackground(getResources().getDrawable(R.drawable.edt_bg_err));
+                }
+            }
+        });
         viewBinding.bar.iconBar.setOnClickListener(v -> finish());
     }
 
@@ -180,9 +201,9 @@ public class RegisterActivity extends BaseActivity<ActivityRegisterBinding> impl
 
     @Override
     public void Btn2Click() {
-        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-        startActivity(intent);
-        finish();
+        regsterViewModel.register(viewBinding.edtPass.getText().toString(),viewBinding.edtName.getText().toString(),
+                viewBinding.edtAddress.getText().toString(),viewBinding.edtEmail.getText().toString(),
+                viewBinding.edtPhone.getText().toString());
     }
 }
 

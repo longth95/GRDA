@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+        <include
+            android:id="@+id/loadingLayout"
+            layout="@layout/loading_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true" />
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/recyclerView"
+            android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/btnApply"
+            android:layout_width="@dimen/_60dp"
+            android:layout_height="@dimen/_60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:layout_marginBottom="@dimen/_10dp"
+            android:background="@drawable/bg_btn_round_blue"
+            android:gravity="center"
+            android:text="+"
+            android:textColor="@color/colorWhite"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:rippleColor="@color/colorWhite" />
+
+    </RelativeLayout>
+</layout>

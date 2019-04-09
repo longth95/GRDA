@@ -5,6 +5,7 @@ import android.arch.lifecycle.ViewModelProvider;
 
 import com.example.kaopiz_admin.myapplication.base.MyViewModelFactory;
 import com.example.kaopiz_admin.myapplication.view.login_screen.LoginViewModel;
+import com.example.kaopiz_admin.myapplication.view.register_screen.RegisterViewModel;
 
 import dagger.Binds;
 import dagger.Module;
@@ -17,6 +18,10 @@ public abstract class ViewModelModule {
     @ViewModelKey(LoginViewModel.class)
     abstract ViewModel loginModel(LoginViewModel loginViewModel);
 
+    @Binds
+    @IntoMap
+    @ViewModelKey(RegisterViewModel.class)
+    abstract ViewModel registerModel(RegisterViewModel registerViewModel);
     @Binds
     abstract ViewModelProvider.Factory viewModelFactory(MyViewModelFactory myViewModelFactory);
 }
